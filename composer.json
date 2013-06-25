@@ -1,5 +1,5 @@
 {
-	"name": "lelesys/plugin-slideshow",
+	"name": "lelesys/plugin-slide-show",
 	"description": "Display plain images in a nice slideshow (using a Lightbox or not). Select the images directly or choose a directory to show all images inside that directory.",
 	"license": "LGPL-3.0+",
 	"type": "typo3-flow-plugin",
