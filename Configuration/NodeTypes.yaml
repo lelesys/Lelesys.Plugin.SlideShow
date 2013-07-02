@@ -1,0 +1,24 @@
+'Lelesys.Plugin.NodeTypes:SlideShowContainer':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Lelesys Sildeshow Container'
+    group: 'Plugins'
+    inlineEditable: true
+    icon:
+      light: Images/Icons/White/columns_icon-16.png
+      dark: Images/Icons/Black/columns_icon-16.png
+  childNodes:
+    slideShowContainer:
+      type: 'TYPO3.Neos:ContentCollection'
+
+'Lelesys.Plugin.NodeTypes:SlideShowItem':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Image'
+  ui:
+    label: 'Lelesys Slideshow Item'
+    group: 'Plugins'
+    inlineEditable: true
+    icon:
+      light: 'Images/Icons/White/columns_icon-16.png'
+      dark: 'Images/Icons/Black/columns_icon-16.png'

@@ -1,0 +1,25 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace t=TYPO3\Neos\ViewHelpers}
+<f:security.ifAccess resource="TYPO3_Neos_Backend_BackendController">
+	<f:then>
+		<t:contentElement node="{node}">
+			<f:if condition="{image.resource}">
+				<f:then>
+					<img src="{f:uri.resource(resource: image.resource)}" alt="image" width="200"/>
+				</f:then>
+				<f:else>
+					<img src="{f:uri.resource(package:'TYPO3.Neos', path:'Images/dummy-image.png')}" title="Dummy Image" />
+				</f:else>
+			</f:if>
+		</t:contentElement>
+	</f:then>
+	<f:else>
+		<div class="item">
+		<f:if condition="{image.resource}">
+			<f:then>
+					<img src="{f:uri.resource(resource: image.resource)}" alt="image"/>
+			</f:then>
+		</f:if>
+		</div>
+	</f:else>
+</f:security.ifAccess>

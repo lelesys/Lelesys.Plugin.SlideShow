@@ -1,0 +1,6 @@
+/*css of backend slideshow plugin*/
+
+#slides-backend .lelesys-plugin-nodetypes-slideshowitem {
+	float: left;
+	margin-right: 10px;
+}

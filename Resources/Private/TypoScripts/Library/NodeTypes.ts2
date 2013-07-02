@@ -1,0 +1,15 @@
+prototype(Lelesys.Plugin.NodeTypes:SlideShowContainer) < prototype(TYPO3.Neos:Template)
+prototype(Lelesys.Plugin.NodeTypes:SlideShowContainer) {
+	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/TypoScript/SlideShowContainer.html'
+	slideShowContainerCollection = ${q(node).children('slideShowContainer').children()}
+	slideShowContainerItemCollection = TYPO3.Neos:ContentCollection
+	slideShowContainerItemCollection {
+		nodePath = 'slideShowContainer'
+		collection = ${q(node).children()}
+	}
+}
+
+prototype(Lelesys.Plugin.NodeTypes:SlideShowItem) < prototype(TYPO3.Neos.NodeTypes:Image)
+prototype(Lelesys.Plugin.NodeTypes:SlideShowItem) {
+	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/TypoScript/SlideShowItem.html'
+}
