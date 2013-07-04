@@ -7,9 +7,11 @@ prototype(Lelesys.Plugin.NodeTypes:SlideShowContainer) {
 		nodePath = 'slideShowContainer'
 		collection = ${q(node).children()}
 	}
+	properties = ${node.properties}
 }
 
 prototype(Lelesys.Plugin.NodeTypes:SlideShowItem) < prototype(TYPO3.Neos.NodeTypes:Image)
 prototype(Lelesys.Plugin.NodeTypes:SlideShowItem) {
 	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/TypoScript/SlideShowItem.html'
+	slideShowContainerProperty = ${q(node).property('_parent.parent.properties')}
 }

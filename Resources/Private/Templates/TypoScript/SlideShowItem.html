@@ -15,11 +15,14 @@
 	</f:then>
 	<f:else>
 		<div class="item">
-		<f:if condition="{image.resource}">
-			<f:then>
-					<img src="{f:uri.resource(resource: image.resource)}" alt="image"/>
-			</f:then>
-		</f:if>
+			<f:if condition="{image.resource}">
+				<f:then>
+					<f:if condition="{slideShowContainerProperty.lightBox}">
+						<f:then><a href="{f:uri.resource(resource: image.resource)}"><img src="{f:uri.resource(resource: image.resource)}" alt="image"/></a></f:then>
+						<f:else><img src="{f:uri.resource(resource: image.resource)}" alt="image"/></f:else>
+					</f:if>
+				</f:then>
+			</f:if>
 		</div>
 	</f:else>
 </f:security.ifAccess>

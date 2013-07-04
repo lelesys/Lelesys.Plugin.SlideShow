@@ -8,10 +8,47 @@
     icon:
       light: Images/Icons/White/columns_icon-16.png
       dark: Images/Icons/Black/columns_icon-16.png
+    inspector:
+      groups:
+        slideshowconfiguration:
+          label: 'Slide Show Configuration'
+          priority: 2
   childNodes:
     slideShowContainer:
       type: 'TYPO3.Neos:ContentCollection'
-
+  properties:
+    controls:
+      type: boolean
+      defaultValue: 1
+      ui:
+        label: 'Controls: show navigation buttons?'
+        inspector:
+          group: slideshowconfiguration
+        reloadIfChanged: true
+    intervaltime:
+      type: string
+      defaultValue: '3000'
+      ui:
+        label: 'Auto slide interval: time in milliseconds.'
+        inspector:
+          group: slideshowconfiguration
+        reloadIfChanged: true
+    gallerywidth:
+      type: string
+      defaultValue: '800px'
+      ui:
+        label: 'Adjust the size of the gallery in pixel(px).'
+        inspector:
+          group: slideshowconfiguration
+        reloadIfChanged: true
+    lightBox:
+      type: boolean
+      defaultValue: 1
+      ui:
+        label: 'Enable light-box'
+        inspector:
+          group: slideshowconfiguration
+        reloadIfChanged: true
 'Lelesys.Plugin.NodeTypes:SlideShowItem':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Image'

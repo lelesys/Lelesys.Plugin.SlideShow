@@ -4,72 +4,84 @@
 	<f:then>
 		<t:contentElement node="{node}">
 			<ul class="nav nav-tabs" id="myTab">
-				<li class="active"><a href="#thumnail" data-toggle="tab">Thumnail view</a></li>
-				<li><a href="#slideshow" data-toggle="tab">Slideshow view</a></li>
+				<li class="active"><a href="#thumbnail-view" data-toggle="tab">Thumbnail view</a></li>
+				<li><a href="#slideshow-view" data-toggle="tab">Slideshow view</a></li>
 			</ul>
 			<div class="tab-content">
-				<div class="tab-pane active" id="thumnail">
+				<div class="tab-pane active" id="thumbnail-view">
 					<br/>
 					<div id="slides-backend">
 						<ts:render path="slideShowContainerItemCollection" />
 					</div>
 					<div class="clearfix"></div>
 				</div>
-				<div class="tab-pane" id="slideshow">
-					<div class="span8">
+				<div class="tab-pane" id="slideshow-view">
+					<div class="slideshow-wrapper">
 						<div id="myCarousel" class="carousel slide">
-							<ol class="carousel-indicators">
-								<f:for each="{slideShowContainerCollection}" as="slideitem" iteration="slideitemIterator">
-									<f:if condition="{slideitemIterator.isFirst}">
-										<f:then>
-											<li data-target="#myCarousel" data-slide-to="{slideitem.index}" class='active'></li>
-										</f:then>
-										<f:else>
-											<li data-target="#myCarousel" data-slide-to="{slideitem.index}"></li>
-										</f:else>
-									</f:if>
-								</f:for>
-							</ol>
+							<f:if condition="{slideShowContainerCollection -> f:count()}>1">
+								<f:then>
+									<ol class="carousel-indicators">
+										<f:for each="{slideShowContainerCollection}" as="slideitem" iteration="slideitemIterator">
+											<f:if condition="{slideitemIterator.isFirst}">
+												<f:then>
+													<li data-target="#myCarousel" data-slide-to="{slideitem.index}" class='active'></li>
+												</f:then>
+												<f:else>
+													<li data-target="#myCarousel" data-slide-to="{slideitem.index}"></li>
+												</f:else>
+											</f:if>
+										</f:for>
+									</ol>
+								</f:then>
+							</f:if>
 							<div class="carousel-inner">
-								<f:for each="{slideShowContainerCollection}" as="slideitem">
-									<div class="item">
-										<f:if condition="{slideitem.properties.image.resource}">
-											<f:then>
-												<img src="{f:uri.resource(resource: slideitem.properties.image.resource)}" alt="image"/>
-											</f:then>
-										</f:if>
-									</div>
-								</f:for>
+								<ts:render path="slideShowContainerItemCollection" />
 							</div>
-							<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-							<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+							<f:if condition="{slideShowContainerCollection -> f:count()}>1">
+								<f:then>
+									<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+									<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+								</f:then>
+							</f:if>
+							<span class="properties hide" data-type=<f:format.json>{properties}</f:format.json>></span>
 						</div>
 					</div>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</t:contentElement>
 	</f:then>
 	<f:else>
-		<div class="span8">
+		<div class="slideshow-wrapper">
 			<div id="myCarousel" class="carousel slide">
-				<ol class="carousel-indicators">
-					<f:for each="{slideShowContainerCollection}" as="slideitem" iteration="slideitemIterator">
-						<f:if condition="{slideitemIterator.isFirst}">
-							<f:then>
-								<li data-target="#myCarousel" data-slide-to="{slideitem.index}" class='active'></li>
-							</f:then>
-							<f:else>
-								<li data-target="#myCarousel" data-slide-to="{slideitem.index}"></li>
-							</f:else>
-						</f:if>
-					</f:for>
-				</ol>
+				<f:if condition="{slideShowContainerCollection -> f:count()}>1">
+					<f:then>
+						<ol class="carousel-indicators">
+							<f:for each="{slideShowContainerCollection}" as="slideitem" iteration="slideitemIterator">
+								<f:if condition="{slideitemIterator.isFirst}">
+									<f:then>
+										<li data-target="#myCarousel" data-slide-to="{slideitem.index}" class='active'></li>
+									</f:then>
+									<f:else>
+										<li data-target="#myCarousel" data-slide-to="{slideitem.index}"></li>
+									</f:else>
+								</f:if>
+							</f:for>
+						</ol>
+					</f:then>
+				</f:if>
 				<div class="carousel-inner">
 					<ts:render path="slideShowContainerItemCollection" />
 				</div>
-				<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-				<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+				<f:if condition="{slideShowContainerCollection -> f:count()}>1">
+					<f:then>
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+					</f:then>
+				</f:if>
+				<span class="properties hide" data-type=<f:format.json>{properties}</f:format.json>></span>
 			</div>
 		</div>
+		<div class="clearfix"></div>
 	</f:else>
 </f:security.ifAccess>
