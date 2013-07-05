@@ -23,6 +23,18 @@
 					</f:if>
 				</f:then>
 			</f:if>
+			<f:if condition="{sliderImageTitle}">
+				<f:then>
+					<div class="carousel-caption">
+						<h4>{sliderImageTitle -> f:format.raw()}</h4>
+						<f:if condition="{sliderImageDescription}">
+							<f:then>
+								<p>{sliderImageDescription -> f:format.raw()}</p>
+							</f:then>
+						</f:if>
+					</div>
+				</f:then>
+			</f:if>
 		</div>
 	</f:else>
 </f:security.ifAccess>

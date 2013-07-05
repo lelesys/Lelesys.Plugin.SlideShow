@@ -14,4 +14,6 @@ prototype(Lelesys.Plugin.NodeTypes:SlideShowItem) < prototype(TYPO3.Neos.NodeTyp
 prototype(Lelesys.Plugin.NodeTypes:SlideShowItem) {
 	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/TypoScript/SlideShowItem.html'
 	slideShowContainerProperty = ${q(node).property('_parent.parent.properties')}
+	sliderImageTitle = ${q(node).property('sliderImageTitle')}
+	sliderImageDescription = ${q(node).property('sliderImageDescription')}
 }

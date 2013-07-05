@@ -35,7 +35,7 @@
         reloadIfChanged: true
     gallerywidth:
       type: string
-      defaultValue: '800px'
+      defaultValue: '700px'
       ui:
         label: 'Adjust the size of the gallery in pixel(px).'
         inspector:
@@ -49,6 +49,7 @@
         inspector:
           group: slideshowconfiguration
         reloadIfChanged: true
+
 'Lelesys.Plugin.NodeTypes:SlideShowItem':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Image'
@@ -59,3 +60,26 @@
     icon:
       light: 'Images/Icons/White/columns_icon-16.png'
       dark: 'Images/Icons/Black/columns_icon-16.png'
+    inspector:
+      groups:
+        slideshowconfiguration:
+          label: 'Slide Show Configuration'
+          priority: 2
+  childNodes:
+    slideShowItem:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    sliderImageTitle:
+      type: string
+      ui:
+        label: 'Slider image title'
+        inspector:
+          group: slideshowconfiguration
+        reloadIfChanged: true
+    sliderImageDescription:
+      type: string
+      ui:
+        label: 'Slider image description'
+        inspector:
+          group: slideshowconfiguration
+        reloadIfChanged: true

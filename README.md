@@ -43,4 +43,4 @@ This will add container to add all the slides.
 Add the plugin content element "Lelesys Slideshow Item" under "Lelesys Slideshow Container".
 Add images which you want in slideshow. You will see added images in one tab in thumbnailview and in other tab you will see slideshow view.
 When you select slide shoe container you will some extended page properties at the left.
-With this option you can make changes like controls for navigation, slide interval time, gallery size and light box.
+With this option you can make changes like controls for navigation,slide image title,slide image description, slide interval time, gallery size and light box.
