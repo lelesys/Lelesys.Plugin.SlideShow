@@ -25,7 +25,7 @@
         inspector:
           group: slideshowconfiguration
         reloadIfChanged: true
-    intervaltime:
+    intervalTime:
       type: string
       defaultValue: '3000'
       ui:
@@ -33,7 +33,7 @@
         inspector:
           group: slideshowconfiguration
         reloadIfChanged: true
-    gallerywidth:
+    galleryWidth:
       type: string
       defaultValue: '700px'
       ui:
