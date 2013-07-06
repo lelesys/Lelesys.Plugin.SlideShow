@@ -5,9 +5,7 @@
     label: 'Lelesys Sildeshow Container'
     group: 'Plugins'
     inlineEditable: true
-    icon:
-      light: Images/Icons/White/columns_icon-16.png
-      dark: Images/Icons/Black/columns_icon-16.png
+    icon: 'icon-puzzle-piece'
     inspector:
       groups:
         slideshowconfiguration:
@@ -57,9 +55,7 @@
     label: 'Lelesys Slideshow Item'
     group: 'Plugins'
     inlineEditable: true
-    icon:
-      light: 'Images/Icons/White/columns_icon-16.png'
-      dark: 'Images/Icons/Black/columns_icon-16.png'
+    icon: 'icon-puzzle-piece'
     inspector:
       groups:
         slideshowconfiguration:
