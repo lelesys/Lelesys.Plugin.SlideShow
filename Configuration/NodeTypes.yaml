@@ -65,9 +65,6 @@
         slideshowconfiguration:
           label: 'Slide Show Configuration'
           priority: 2
-  childNodes:
-    slideShowItem:
-      type: 'TYPO3.Neos:ContentCollection'
   properties:
     sliderImageTitle:
       type: string
