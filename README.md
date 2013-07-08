@@ -1,12 +1,14 @@
 Lelesys SlideShow Plugin
 =======
 
-TYPO3 Neos plugin that will allow user to add Slideshow.
+This plugin adds SlideShow to your websites.
 
-Setup
------
+Warning: This plugin is experimental.
 
-Enter the following line in the Root.ts2 of your site package
+Quick start
+-----------
+
+* include the plugin's TypoScript definitions to your own one's (located in, for example,Packages/Sites/Your.Site/Resources/Private/TypoScripts/Library/ContentElements.ts2) with:
 
 ``include: resource://Lelesys.Plugin.SlideShow/Private/TypoScripts/Library/NodeTypes.ts2
 ``
@@ -38,9 +40,11 @@ Include the plugin's Javascript to your own one's where you add other javascript
 
 Usage
 -----
-Add the plugin content element "Lelesys Slideshow Container" to the position of your choice.
-This will add container to add all the slides.
-Add the plugin content element "Lelesys Slideshow Item" under "Lelesys Slideshow Container".
-Add images which you want in slideshow. You will see added images in one tab in thumbnailview and in other tab you will see slideshow view.
+* add the plugin content element "Lelesys Slideshow Container" to the position of your choice.
+   * This will add container to add all the slides.
+* add the plugin content element "Lelesys Slideshow Item" under "Lelesys Slideshow Container".
+   * Inside "Lelesys Slideshow Item" add images which you want in slideshow.
+
+You will see added images in one tab in thumbnailview and in other tab you will see slideshow view.
 When you select slide show container you will some extended page properties at the left.
 With this option you can make changes like controls for navigation,slide image title,slide image description, slide interval time, gallery size and light box.
