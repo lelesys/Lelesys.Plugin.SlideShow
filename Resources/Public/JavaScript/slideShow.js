@@ -2,14 +2,14 @@
 jQuery(document).ready(function() {
 	jQuery('.carousel-inner .item:first-child').addClass('active');
 
-	// js for slider + jquery.tinycarousel.min.js is required for slider
+	// Js for slideshow
 	jQuery('.carousel').each(function() {
 		var properties = $.parseJSON($(this).find('span.properties').attr('data-type'));
 		jQuery(this).carousel({
-			interval: parseInt(properties['intervaltime'])
+			interval: parseInt(properties['intervalTime'])
 		});
-		if (parseInt(properties['gallerywidth'])) {
-			var width = parseInt(properties['gallerywidth']);
+		if (parseInt(properties['galleryWidth'])) {
+			var width = parseInt(properties['galleryWidth']);
 			var parentWidth = jQuery('.slideshow-wrapper').parent().width();
 			var percent = Math.round(100 * width / parentWidth);
 			jQuery('.slideshow-wrapper').width(percent + '%');
@@ -27,19 +27,14 @@ jQuery(document).ready(function() {
 				imageBlank: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-blank.gif'
 			});
 		}
-
-
 	});
-// end of js for slider
+// end of js for slideshow
 
 	//This function is for Tab structure
 	jQuery('#myTab a').click(function(e) {
 		e.preventDefault();
 		jQuery(this).tab('show');
 	});
-
-
-
 
 });
 
