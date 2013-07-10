@@ -1,11 +1,11 @@
-'Lelesys.Plugin.NodeTypes:SlideShowContainer':
+'Lelesys.Plugin.SlideShow:SlideShowContainer':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
-    label: 'Lelesys Sildeshow Container'
-    group: 'Plugins'
+    label: 'Sildeshow Container'
+    group: Structure
     inlineEditable: true
-    icon: 'icon-puzzle-piece'
+    icon: 'icon-list'
     inspector:
       groups:
         slideshowconfiguration:
@@ -48,14 +48,14 @@
           group: slideshowconfiguration
         reloadIfChanged: true
 
-'Lelesys.Plugin.NodeTypes:SlideShowItem':
+'Lelesys.Plugin.SlideShow:SlideShowItem':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Image'
   ui:
-    label: 'Lelesys Slideshow Item'
-    group: 'Plugins'
+    label: 'Slideshow Item'
+    group: Structure
     inlineEditable: true
-    icon: 'icon-puzzle-piece'
+    icon: 'icon-play'
     inspector:
       groups:
         slideshowconfiguration:
