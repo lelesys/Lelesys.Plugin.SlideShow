@@ -4,28 +4,32 @@ jQuery(document).ready(function() {
 
 	// Js for slideshow
 	jQuery('.carousel').each(function() {
-		var properties = $.parseJSON($(this).find('span.properties').attr('data-type'));
-		jQuery(this).carousel({
-			interval: parseInt(properties['intervalTime'])
-		});
-		if (parseInt(properties['galleryWidth'])) {
-			var width = parseInt(properties['galleryWidth']);
-			var parentWidth = jQuery('.slideshow-wrapper').parent().width();
-			var percent = Math.round(100 * width / parentWidth);
-			jQuery('.slideshow-wrapper').width(percent + '%');
-		}
-		if (!properties['controls']) {
-			jQuery(this).children('a.carousel-control').addClass('hide');
-		}
-		if (properties['lightBox']) {
-			//This function is for light box
-			jQuery('.carousel-inner a').lightBox({
-				imageLoading: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-ico-loading.gif',
-				imageBtnPrev: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-btn-prev.gif',
-				imageBtnNext: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-btn-next.gif',
-				imageBtnClose: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-btn-close.gif',
-				imageBlank: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-blank.gif'
+		var property_string = $(this).find('span.properties').attr('data-type');
+		if (property_string) {
+			var properties = $.parseJSON(property_string);
+
+			jQuery(this).carousel({
+				interval: parseInt(properties['intervalTime'])
 			});
+			if (parseInt(properties['galleryWidth'])) {
+				var width = parseInt(properties['galleryWidth']);
+				var parentWidth = jQuery('.slideshow-wrapper').parent().width();
+				var percent = Math.round(100 * width / parentWidth);
+				jQuery('.slideshow-wrapper').width(percent + '%');
+			}
+			if (!properties['controls']) {
+				jQuery(this).children('a.carousel-control').addClass('hide');
+			}
+			if (properties['lightBox']) {
+				//This function is for light box
+				jQuery('.carousel-inner a').lightBox({
+					imageLoading: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-ico-loading.gif',
+					imageBtnPrev: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-btn-prev.gif',
+					imageBtnNext: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-btn-next.gif',
+					imageBtnClose: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-btn-close.gif',
+					imageBlank: '/_Resources/Static/Packages/Lelesys.Plugin.SlideShow/Images/lightbox-blank.gif'
+				});
+			}
 		}
 	});
 // end of js for slideshow
