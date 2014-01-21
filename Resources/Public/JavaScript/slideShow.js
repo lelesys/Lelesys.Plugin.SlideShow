@@ -1,5 +1,6 @@
 /*Initialized the carousel and to add active class for the slide item*/
 jQuery(document).ready(function() {
+	jQuery('.carousel-inner .neos-contentcollection:first-child').addClass('carousel-inner');
 	jQuery('.carousel-inner .item:first-child').addClass('active');
 
 	// Js for slideshow

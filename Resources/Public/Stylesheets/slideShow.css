@@ -9,3 +9,10 @@
 	width: 200px;
 	height: 150px;
 }
+.carousel-indicators {
+    display: inline-table;
+    left: 18%;
+    margin: 0 auto;
+    top: 0;
+    width: 40%;
+}

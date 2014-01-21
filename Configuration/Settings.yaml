@@ -1,0 +1,7 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Lelesys.Plugin.SlideShow': TRUE
+
+

@@ -3,16 +3,10 @@ Lelesys SlideShow Plugin
 
 This plugin adds SlideShow to your websites.
 
-Warning: This plugin is experimental.
+##### Important note: Initial package development was done when TYPO3 Neos was at alpha3/4. We are working hard continuously to get this to work perfectly and to beautify source code using best practices/concepts of Flow/Neos. Stay tuned!
 
 Quick start
 -----------
-
-* include the plugin's TypoScript definitions to your own one's (located in, for example,Packages/Sites/Your.Site/Resources/Private/TypoScripts/Library/ContentElements.ts2) with:
-
-```
-include: resource://Lelesys.Plugin.SlideShow/Private/TypoScripts/Library/NodeTypes.ts2
-```
 
 Include the plugin's Stylesheet to your own one's where you add other stylesheets of the site.
 
@@ -30,9 +24,11 @@ Include the plugin's Stylesheet to your own one's where you add other stylesheet
 
 Include the plugin's Javascript to your own one's where you add other javascript of the site.
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/bootstrap-carousel.js')}"></script>```
+```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/bootstrap.min.js')}"></script>```
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/bootstrap-tab.js')}"</script>```
+```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/carousel.js')}"></script>```
+
+```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/tab.js')}"</script>```
 
 ```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/slideShow.js')}"></script>```
 

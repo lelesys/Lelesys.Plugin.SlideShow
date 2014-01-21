@@ -1,4 +1,4 @@
-prototype(Lelesys.Plugin.SlideShow:SlideShowContainer) < prototype(TYPO3.Neos:Template)
+prototype(Lelesys.Plugin.SlideShow:SlideShowContainer) < prototype(TYPO3.Neos:Content)
 prototype(Lelesys.Plugin.SlideShow:SlideShowContainer) {
 	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/TypoScript/SlideShowContainer.html'
 	slideShowContainerCollection = ${q(node).children('slideShowContainer').children()}
