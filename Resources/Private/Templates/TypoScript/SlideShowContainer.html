@@ -2,51 +2,8 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
 	<f:then>
-		<ul class="nav nav-tabs" id="myTab">
-			<li class="active"><a href="#thumbnail-view" data-toggle="tab">Thumbnail view</a></li>
-			<li><a href="#slideshow-view" data-toggle="tab">Slideshow view</a></li>
-		</ul>
-		<div class="tab-content">
-			<div class="tab-pane active" id="thumbnail-view">
-				<br/>
-				<div id="slides-backend">
-					{slideShowContainerItemCollection -> f:format.raw()}
-					<br />
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="tab-pane" id="slideshow-view">
-				<div class="slideshow-wrapper">
-					<div id="myCarousel" class="carousel slide">
-						<f:if condition="{slideShowContainerCollection -> f:count()} > 1">
-							<f:then>
-								<ol class="carousel-indicators">
-									<f:for each="{slideShowContainerCollection}" as="slideitem" iteration="slideitemIterator"><f:if condition="{slideitemIterator.isFirst}">
-											<f:then>
-												<li data-target="#myCarousel" data-slide-to="{slideitemIterator.index}" class='active'></li>
-											</f:then>
-											<f:else>
-												<li data-target="#myCarousel" data-slide-to="{slideitemIterator.index}"></li>
-											</f:else>
-										</f:if>
-									</f:for>
-								</ol>
-							</f:then>
-						</f:if>
-						<div class="carousel-inner">
-							{slideShowContainerItemCollection -> f:format.raw()}
-						</div>
-						<f:if condition="{slideShowContainerCollection -> f:count()}>1">
-							<f:then>
-								<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-								<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-							</f:then>
-						</f:if>
-						<span class="properties hide" data-type=<f:format.json>{properties}</f:format.json>></span>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
+		<div>
+			{slideShowContainerItemCollection -> f:format.raw()}
 		</div>
 	</f:then>
 	<f:else>
