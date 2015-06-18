@@ -11,28 +11,28 @@ Quick start
 Include the plugin's Stylesheet to your own one's where you add other stylesheets of the site.
 
 ```
-<link href="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/Stylesheets/bootstrap-carousel.css')}" rel="stylesheet" media="screen">
+<link href="{f:uri.resource(path: 'Stylesheets/bootstrap-carousel.css', package: 'Lelesys.Plugin.SlideShow')}" rel="stylesheet" media="screen">
 ```
 
 ```
-<link href="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/Stylesheets/slideShow.css')}" rel="stylesheet" media="screen">
+<link href="{f:uri.resource(path: 'Stylesheets/slideShow.css', package: 'Lelesys.Plugin.SlideShow')}" rel="stylesheet" media="screen">
 ```
 
 ```
-<link href="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/Stylesheets/jquery.lightbox-0.5.css')}" rel="stylesheet" media="screen">
+<link href="{f:uri.resource(path: 'Stylesheets/jquery.lightbox-0.5.css', package: 'Lelesys.Plugin.SlideShow')}" rel="stylesheet" media="screen">
 ```
 
 Include the plugin's Javascript to your own one's where you add other javascript of the site.
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/bootstrap.min.js')}"></script>```
+```<script src="{f:uri.resource(path: 'JavaScript/bootstrap.min.js', package: 'Lelesys.Plugin.SlideShow')}"></script>```
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/carousel.js')}"></script>```
+```<script src="{f:uri.resource(path: 'JavaScript/carousel.js', package: 'Lelesys.Plugin.SlideShow')}"></script>```
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/tab.js')}"</script>```
+```<script src="{f:uri.resource(path: 'JavaScript/tab.js', package: 'Lelesys.Plugin.SlideShow')}"</script>```
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/slideShow.js')}"></script>```
+```<script src="{f:uri.resource(path: 'JavaScript/slideShow.js', package: 'Lelesys.Plugin.SlideShow')}"></script>```
 
-```<script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.SlideShow/Public/JavaScript/jquery.lightbox-0.5.js')}"></script>```
+```<script src="{f:uri.resource(path: 'JavaScript/jquery.lightbox-0.5.js', package: 'Lelesys.Plugin.SlideShow')}"></script>```
 
 Usage
 -----
