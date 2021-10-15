@@ -1,0 +1,17 @@
+prototype(Lelesys.Plugin.SlideShow:SlideShowContainer) < prototype(Neos.Neos:Content) {
+	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/FusionObjects/SlideShowContainer.html'
+	slideShowContainerCollection = ${q(node).children('slideShowContainer').children('[instanceof Neos.NodeTypes:Image]')}
+	slideShowContainerItemCollection = Neos.Neos:ContentCollection
+	slideShowContainerItemCollection {
+		nodePath = 'slideShowContainer'
+	}
+	properties = ${node.properties}
+}
+
+prototype(Lelesys.Plugin.SlideShow:SlideShowItem) < prototype(Neos.NodeTypes:Image) {
+	templatePath = 'resource://Lelesys.Plugin.SlideShow/Private/Templates/FusionObjects/SlideShowItem.html'
+	slideShowContainerProperty = ${q(node).property('_parent.parent.properties')}
+	sliderImageTitle = ${q(node).property('sliderImageTitle')}
+	sliderImageDescription = ${q(node).property('sliderImageDescription')}
+    image = ${q(node).property('image')}
+}
